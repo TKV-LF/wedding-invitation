@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Faugllin Balseyn';
+    src: url('faugllin-balseyn/faugllin-balseyn.woff2') format('woff2'),
+         url('faugllin-balseyn/faugllin-balseyn.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+     font-family: 'Right Here';
+     src: url('right-here/right-here.woff2') format('woff2'),
+          url('right-here/right-here.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+     font-display: swap;
+   }
+
+   @font-face {
+     font-family: 'Scarlet Bradley.regular';
+     src: url('scarlet-bradleyregular/scarlet-bradleyregular.woff2') format('woff2'),
+          url('scarlet-bradleyregular/scarlet-bradleyregular.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+     font-display: swap;
+   }
