@@ -257,7 +257,7 @@ galleryItems.forEach((item, index) => {
     });
 });
 
-const setGalleryMain = (index) => {
+const setGalleryMain = (index, shouldScrollIntoView = true) => {
     currentImageIndex = index;
 
     // Update active thumb state
@@ -278,8 +278,8 @@ const setGalleryMain = (index) => {
         preloader.src = nextSrc;
     }
 
-    // Keep active thumbnail visible
-    if (activeItem) {
+    // Keep active thumbnail visible (only when user navigates gallery)
+    if (activeItem && shouldScrollIntoView) {
         activeItem.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
     }
 };
@@ -308,12 +308,12 @@ const showNextImage = () => {
 
 const showPrevMain = () => {
     const nextIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-    setGalleryMain(nextIndex);
+    setGalleryMain(nextIndex, true);
 };
 
 const showNextMain = () => {
     const nextIndex = (currentImageIndex + 1) % galleryImages.length;
-    setGalleryMain(nextIndex);
+    setGalleryMain(nextIndex, true);
 };
 
 const scrollThumbsBy = (direction) => {
@@ -376,7 +376,8 @@ document.addEventListener('keydown', (e) => {
 
 // Initialize hero gallery on load
 if (galleryItems.length && galleryMainImage) {
-    setGalleryMain(0);
+    // Do not scroll thumbnails into view on initial load (prevents auto-scroll to gallery on mobile)
+    setGalleryMain(0, false);
     // Clicking the main image opens lightbox too
     galleryMainImage.addEventListener('click', () => openLightbox(currentImageIndex));
 }
