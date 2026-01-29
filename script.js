@@ -750,7 +750,7 @@ let autoScrollStopped = false;
 // Ease-out cubic (smooth deceleration)
 const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
 
-const startAutoScroll = (duration = 75000) => {
+const startAutoScroll = (duration = 350000) => {
     if (autoScrollRAF) return;
 
     const startY = window.scrollY;
