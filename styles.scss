@@ -677,7 +677,7 @@ $lost-corner-svg-url: "data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGl
   .wedding-information {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
+    gap: 1rem;
     align-items: start;
     justify-items: center;
     margin-bottom: 1.75rem;
@@ -707,8 +707,8 @@ $lost-corner-svg-url: "data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGl
     }
 
     .image {
-      width: 190px;
-      height: 190px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       overflow: hidden;
       margin: 1rem auto 0;
@@ -795,11 +795,6 @@ $lost-corner-svg-url: "data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGl
   }
 
   @media (max-width: 640px) {
-    .wedding-information {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
     .wedding-signature {
       grid-template-columns: 1fr;
       gap: 0.5rem;
@@ -1295,7 +1290,7 @@ $lost-corner-svg-url: "data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGl
    ========================================== */
 .gift-section {
   background-color: var(--color-beige);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   .gift-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -1620,6 +1615,7 @@ $lost-corner-svg-url: "data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGl
   }
 
   .hero-section {
+    min-height: 100vh;
     padding-bottom: 280px;
 
     .hero-title {

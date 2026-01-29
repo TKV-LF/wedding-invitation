@@ -596,7 +596,7 @@ section {
 .countdown-section .wedding-information {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
+  gap: 1rem;
   align-items: start;
   justify-items: center;
   margin-bottom: 1.75rem;
@@ -621,8 +621,8 @@ section {
   font-family: var(--font-scarlet-bradley);
 }
 .countdown-section .wedding-person .image {
-  width: 190px;
-  height: 190px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   overflow: hidden;
   margin: 1rem auto 0;
@@ -696,10 +696,6 @@ section {
   letter-spacing: 1px;
 }
 @media (max-width: 640px) {
-  .countdown-section .wedding-information {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
   .countdown-section .wedding-signature {
     grid-template-columns: 1fr;
     gap: 0.5rem;
@@ -1131,7 +1127,7 @@ section {
    ========================================== */
 .gift-section {
   background-color: var(--color-beige);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .gift-section .gift-content {
   display: grid;
@@ -1420,6 +1416,7 @@ section {
     padding: 0 var(--spacing-sm);
   }
   .hero-section {
+    min-height: 100vh;
     padding-bottom: 280px;
   }
   .hero-section .hero-title {
