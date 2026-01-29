@@ -575,6 +575,81 @@ if ('loading' in HTMLImageElement.prototype) {
 }
 
 // ==========================================
+// Auto Slow Scroll (Top → Bottom) with Easing
+// Stops on User Interaction
+// ==========================================
+let autoScrollRAF = null;
+let autoScrollStopped = false;
+
+// Ease-out cubic (smooth deceleration)
+const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+const startAutoScroll = (duration = 25000) => {
+    if (autoScrollRAF) return;
+
+    const startY = window.scrollY;
+    const maxScroll =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+    const startTime = performance.now();
+    autoScrollStopped = false;
+
+    const step = (now) => {
+        // Check immediately if stopped
+        if (autoScrollStopped) {
+            autoScrollRAF = null;
+            return;
+        }
+
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeOutCubic(progress);
+
+        // Double-check before scrolling
+        if (autoScrollStopped) {
+            autoScrollRAF = null;
+            return;
+        }
+
+        const targetY = startY + (maxScroll - startY) * eased;
+        window.scrollTo(0, targetY);
+
+        if (progress < 1 && !autoScrollStopped) {
+            autoScrollRAF = requestAnimationFrame(step);
+        } else {
+            autoScrollRAF = null;
+        }
+    };
+
+    autoScrollRAF = requestAnimationFrame(step);
+};
+
+const stopAutoScroll = () => {
+    autoScrollStopped = true;
+    if (autoScrollRAF) {
+        cancelAnimationFrame(autoScrollRAF);
+        autoScrollRAF = null;
+    }
+};
+
+// Stop on ANY user interaction - use capture phase for immediate stop
+const stopOnInteraction = () => {
+    stopAutoScroll();
+};
+
+// Listen for various user interactions
+window.addEventListener('wheel', stopOnInteraction, { passive: true, once: true, capture: true });
+window.addEventListener('touchstart', stopOnInteraction, { passive: true, once: true, capture: true });
+window.addEventListener('mousedown', stopOnInteraction, { passive: true, once: true, capture: true });
+window.addEventListener('click', stopOnInteraction, { passive: true, once: true, capture: true });
+window.addEventListener('keydown', stopOnInteraction, { passive: true, once: true, capture: true });
+
+// Also listen on document for click/touch events (in case they don't bubble to window)
+document.addEventListener('click', stopOnInteraction, { passive: true, once: true, capture: true });
+document.addEventListener('touchstart', stopOnInteraction, { passive: true, once: true, capture: true });
+document.addEventListener('mousedown', stopOnInteraction, { passive: true, once: true, capture: true });
+
+// ==========================================
 // Initialize on Page Load
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -604,6 +679,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initialize and try to auto-play music
         initMusicPlayer();
     }, 100);
+    
+    // Start auto-scroll after page is ready (wait 1 second)
+    setTimeout(() => {
+        startAutoScroll();
+    }, 1000);
 });
 
 // ==========================================
