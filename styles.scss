@@ -380,7 +380,6 @@ $lost-corner-svg-url: "data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGl
 .hero-section {
   position: relative;
   /* Let content and overlay define height, but keep full-viewport feel */
-  min-height: 100vh;
   height: auto;
   padding-bottom: 370px;
   display: flex;
@@ -911,7 +910,7 @@ $lost-corner-svg-url: "data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGl
    Gallery Section
    ========================================== */
 .gallery-section {
-  background-color: var(--color-white);
+  background-color: var(--color-beige);
 
   .gallery-viewer {
     margin-top: 3rem;
@@ -1296,7 +1295,7 @@ $lost-corner-svg-url: "data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGl
    ========================================== */
 .gift-section {
   background-color: var(--color-beige);
-
+  margin-bottom: 2rem;
   .gift-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));

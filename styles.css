@@ -338,7 +338,6 @@ section {
 .hero-section {
   position: relative;
   /* Let content and overlay define height, but keep full-viewport feel */
-  min-height: 100vh;
   height: auto;
   padding-bottom: 370px;
   display: flex;
@@ -799,7 +798,7 @@ section {
    Gallery Section
    ========================================== */
 .gallery-section {
-  background-color: var(--color-white);
+  background-color: var(--color-beige);
 }
 .gallery-section .gallery-viewer {
   margin-top: 3rem;
@@ -1132,6 +1131,7 @@ section {
    ========================================== */
 .gift-section {
   background-color: var(--color-beige);
+  margin-bottom: 2rem;
 }
 .gift-section .gift-content {
   display: grid;
