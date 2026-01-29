@@ -209,7 +209,7 @@ scrollToTopBtn.addEventListener('click', () => {
 // ==========================================
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px 100px 0px' // Trigger 100px before element enters viewport
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -223,6 +223,172 @@ const observer = new IntersectionObserver((entries) => {
 // Observe all elements with fade-in-up class
 const fadeElements = document.querySelectorAll('.fade-in-up');
 fadeElements.forEach(element => observer.observe(element));
+
+// ==========================================
+// Wedding Information Animation
+// ==========================================
+const weddingInfoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const countdownSection = entry.target;
+            const weddingInfo = countdownSection.querySelector('.wedding-information');
+            const weddingSignature = countdownSection.querySelector('.wedding-signature');
+            
+            if (weddingInfo) {
+                const groomInfo = weddingInfo.querySelector('.groom .info');
+                const brideInfo = weddingInfo.querySelector('.bride .info');
+                const groomImage = weddingInfo.querySelector('.groom .image');
+                const brideImage = weddingInfo.querySelector('.bride .image');
+                
+                // Animate groom info first (slides from left)
+                if (groomInfo) {
+                    setTimeout(() => {
+                        groomInfo.classList.add('animate-in');
+                    }, 100);
+                }
+                
+                // Animate bride info (slides from right)
+                if (brideInfo) {
+                    setTimeout(() => {
+                        brideInfo.classList.add('animate-in');
+                    }, 250);
+                }
+                
+                // Animate groom image (slides from left to center)
+                if (groomImage) {
+                    setTimeout(() => {
+                        groomImage.classList.add('animate-in');
+                    }, 400);
+                }
+                
+                // Animate bride image (slides from right to center)
+                if (brideImage) {
+                    setTimeout(() => {
+                        brideImage.classList.add('animate-in');
+                    }, 550);
+                }
+            }
+            
+            if (weddingSignature) {
+                const nameElements = weddingSignature.querySelectorAll('.name');
+                const ampersand = weddingSignature.querySelector('.ampersand');
+                
+                // Animate names first, then ampersand
+                nameElements.forEach((name, index) => {
+                    setTimeout(() => {
+                        name.classList.add('animate-in');
+                    }, 700 + (index * 150));
+                });
+                
+                if (ampersand) {
+                    setTimeout(() => {
+                        ampersand.classList.add('animate-in');
+                    }, 1000);
+                }
+            }
+            
+            // Unobserve after animation starts
+            weddingInfoObserver.unobserve(countdownSection);
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px 200px 0px' // Trigger 200px before section enters viewport
+});
+
+// Observe countdown section (which contains wedding-information)
+const countdownSection = document.querySelector('.countdown-section');
+if (countdownSection) {
+    weddingInfoObserver.observe(countdownSection);
+}
+
+// ==========================================
+// Section Animations (RSVP, Gift, Events, Gallery)
+// ==========================================
+const sectionAnimationObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const section = entry.target;
+            
+            // Animate section title
+            const sectionTitle = section.querySelector('.section-title');
+            if (sectionTitle) {
+                setTimeout(() => {
+                    sectionTitle.classList.add('animate-in');
+                }, 100);
+            }
+            
+            // Animate section subtitle
+            const sectionSubtitle = section.querySelector('.section-subtitle');
+            if (sectionSubtitle) {
+                setTimeout(() => {
+                    sectionSubtitle.classList.add('animate-in');
+                }, 200);
+            }
+            
+            // RSVP Section - animate form container and form groups
+            if (section.classList.contains('rsvp-section')) {
+                const formContainer = section.querySelector('.rsvp-form-container');
+                if (formContainer) {
+                    setTimeout(() => {
+                        formContainer.classList.add('animate-in');
+                    }, 400);
+                }
+                
+                const formGroups = section.querySelectorAll('.form-group');
+                formGroups.forEach((group, index) => {
+                    setTimeout(() => {
+                        group.classList.add('animate-in');
+                    }, 600 + (index * 100));
+                });
+            }
+            
+            // Gift Section - animate gift cards
+            if (section.classList.contains('gift-section')) {
+                const giftCards = section.querySelectorAll('.gift-card');
+                giftCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('animate-in');
+                    }, 400 + (index * 200));
+                });
+            }
+            
+            // Events Section - animate event cards
+            if (section.classList.contains('events-section')) {
+                const eventCards = section.querySelectorAll('.event-card');
+                eventCards.forEach((card, index) => {
+                    // Remove fade-in-up class if present to use new animation
+                    card.classList.remove('fade-in-up');
+                    setTimeout(() => {
+                        card.classList.add('animate-in');
+                    }, 400 + (index * 150));
+                });
+            }
+            
+            // Gallery Section - animate gallery viewer
+            if (section.classList.contains('gallery-section')) {
+                const galleryViewer = section.querySelector('.gallery-viewer');
+                if (galleryViewer) {
+                    setTimeout(() => {
+                        galleryViewer.classList.add('animate-in');
+                    }, 400);
+                }
+            }
+            
+            // Unobserve after animation starts
+            sectionAnimationObserver.unobserve(section);
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px 150px 0px' // Trigger 150px before section enters viewport
+});
+
+// Observe all main sections
+const sectionsToAnimate = document.querySelectorAll('.rsvp-section, .gift-section, .events-section, .gallery-section');
+sectionsToAnimate.forEach(section => {
+    sectionAnimationObserver.observe(section);
+});
 
 // ==========================================
 // Gallery Lightbox
