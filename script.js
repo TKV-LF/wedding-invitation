@@ -750,7 +750,7 @@ let autoScrollStopped = false;
 // Ease-out cubic (smooth deceleration)
 const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
 
-const startAutoScroll = (duration = 25000) => {
+const startAutoScroll = (duration = 75000) => {
     if (autoScrollRAF) return;
 
     const startY = window.scrollY;
@@ -845,11 +845,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initialize and try to auto-play music
         initMusicPlayer();
     }, 100);
-    
-    // Start auto-scroll after page is ready (wait 1 second)
+});
+
+// ==========================================
+// Start Auto-Scroll After Page Fully Loaded
+// ==========================================
+window.addEventListener('load', () => {
+    // Wait a moment after all resources are loaded, then start auto-scroll
     setTimeout(() => {
         startAutoScroll();
-    }, 1000);
+    }, 500);
 });
 
 // ==========================================
