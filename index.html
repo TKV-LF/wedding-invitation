@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Trang web cưới của Nguyễn Trọng Thuỷ & Lê Thị Diệu Thuỳ - Wedding website of Nguyen Trong Thuy & Le Thi Dieu Thuy">
+    <meta name="theme-color" content="#800020">
     <title>Thuỷ & Thuỳ - Wedding</title>
+    
+    <!-- Resource Hints -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet"></noscript>
     <link rel="icon" type="image/png" href="assets/images/chu-hy.png">
     <!-- Fonts -->
     <link rel="stylesheet" href="assets/fonts/fonts.css">
 
     <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
@@ -26,7 +34,7 @@
 
     <!-- Home Section -->
     <section id="home" class="hero-section">
-        <audio id="backgroundMusic" loop autoplay>
+        <audio id="backgroundMusic" loop preload="none">
             <source src="six-degrees.mp3" type="audio/mpeg">
         </audio>
         <div class="music-icon" id="musicIcon">
@@ -37,10 +45,10 @@
         </div>
         <div class="hero-overlay">
             <div class="vo-chong">
-                <img src="assets/images/2-vo-chong.png" alt="Vo chong">
+                <img src="assets/images/2-vo-chong.png" alt="Vo chong" loading="eager" fetchpriority="high">
             </div>
             <div class="chu-hy">
-                <img src="assets/images/chu-hy.png" alt="Chu hy">
+                <img src="assets/images/chu-hy.png" alt="Chu hy" loading="eager" fetchpriority="high">
             </div>
         </div>
         <div class="hero-content">
@@ -212,6 +220,7 @@
                         alt="Wedding photo 1" 
                         loading="lazy"
                         decoding="async"
+                        fetchpriority="low"
                     >
                 </div>
 

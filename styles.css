@@ -86,6 +86,28 @@ body {
   overflow-x: hidden;
 }
 
+/* Performance optimizations */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Optimize font loading */
+@font-face {
+  font-family: "Faugllin Balseyn";
+  font-display: swap;
+}
+@font-face {
+  font-family: "Right Here";
+  font-display: swap;
+}
+@font-face {
+  font-family: "Scarlet Bradley.regular";
+  font-display: swap;
+}
 @keyframes floatDecor {
   0%, 100% {
     transform: translateY(0) rotate(0deg) scale(1);
