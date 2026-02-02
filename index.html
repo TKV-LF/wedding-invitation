@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" id="htmlLang">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,7 +54,7 @@
         <div class="hero-content">
             <div class="hero-text fade-in">
                 <div class="hero-date">
-                    <div class="date-title">Save the Date</div>
+                    <div class="date-title" data-vi="Lưu Ngày" data-en="Save the Date" data-cn="保存日期">Save the Date</div>
                     <span>26.02.2026</span>
                 </div>
                 <h1 class="hero-title">
@@ -66,7 +66,7 @@
 
     <section class="wedding-invitation">
         <div class="container">
-            <h2 class="title" data-vi="Wedding Invitation" data-en="Wedding Invitation">Wedding Invitation</h2>
+            <h2 class="title" data-vi="Wedding Invitation" data-en="Wedding Invitation" data-cn="婚礼邀请">Wedding Invitation</h2>
         </div>
     </section>
 
@@ -76,10 +76,10 @@
             <div class="wedding-information">
                 <div class="wedding-person groom">
                     <div class="info">
-                        <div class="title">Nhà Trai</div>
+                        <div class="title" data-vi="Nhà Trai" data-en="Groom's Family" data-cn="新郎家">Nhà Trai</div>
                         <div class="parent">
-                            <div class="father">Ông Nguyễn Trọng Tình</div>
-                            <div class="mother">Bà Nguyễn Thị Tâm</div>
+                            <div class="father" data-vi="Nguyen Trong Tinh" data-en="Nguyen Trong Tinh" data-cn="Nguyen Trong Tinh">Nguyen Trong Tinh</div>
+                            <div class="mother" data-vi="Nguyen Thi Tam" data-en="Nguyen Thi Tam" data-cn="Nguyen Thi Tam">Nguyen Thi Tam</div>
                         </div>
                     </div>
                     <div class="image">
@@ -89,10 +89,10 @@
 
                 <div class="wedding-person bride">
                     <div class="info">
-                        <div class="title">Nhà Gái</div>
+                        <div class="title" data-vi="Nhà Gái" data-en="Bride's Family" data-cn="新娘家">Nhà Gái</div>
                         <div class="parent">
-                            <div class="father">Ông Lê Hữu Phúc</div>
-                            <div class="mother">Bà Phạm Thị Thu</div>
+                            <div class="father" data-vi="Le Huu Phuc" data-en="Le Huu Phuc" data-cn="Le Huu Phuc">Le Huu Phuc</div>
+                            <div class="mother" data-vi="Pham Thi Thu" data-en="Pham Thi Thu" data-cn="Pham Thi Thu">Pham Thi Thu</div>
                         </div>
                     </div>
                     <div class="image">
@@ -108,19 +108,19 @@
             <div class="countdown-timer" id="countdown">
                 <div class="countdown-item">
                     <span class="countdown-value" id="days">00</span>
-                    <span class="countdown-label" data-vi="Ngày" data-en="Days">Ngày</span>
+                    <span class="countdown-label" data-vi="Ngày" data-en="Days" data-cn="天">Ngày</span>
                 </div>
                 <div class="countdown-item">
                     <span class="countdown-value" id="hours">00</span>
-                    <span class="countdown-label" data-vi="Giờ" data-en="Hours">Giờ</span>
+                    <span class="countdown-label" data-vi="Giờ" data-en="Hours" data-cn="小时">Giờ</span>
                 </div>
                 <div class="countdown-item">
                     <span class="countdown-value" id="minutes">00</span>
-                    <span class="countdown-label" data-vi="Phút" data-en="Minutes">Phút</span>
+                    <span class="countdown-label" data-vi="Phút" data-en="Minutes" data-cn="分钟">Phút</span>
                 </div>
                 <div class="countdown-item">
                     <span class="countdown-value" id="seconds">00</span>
-                    <span class="countdown-label" data-vi="Giây" data-en="Seconds">Giây</span>
+                    <span class="countdown-label" data-vi="Giây" data-en="Seconds" data-cn="秒">Giây</span>
                 </div>
             </div>
         </div>
@@ -129,36 +129,36 @@
     <!-- Events Section -->
     <section id="events" class="events-section lost-all-corner">
         <div class="container">
-            <h2 class="section-title" data-vi="Sự Kiện Cưới" data-en="Wedding Events">Sự Kiện Cưới</h2>
+            <h2 class="section-title" data-vi="Sự Kiện Cưới" data-en="Wedding Events" data-cn="婚礼活动">Sự Kiện Cưới</h2>
             <div class="events-grid">
                 <!-- Bride Ceremony (Lễ Vu Quy) -->
                 <div class="event-card fade-in-up">
                     <div class="event-icon">
                         <i class="fas fa-heart"></i>
                     </div>
-                    <h3 class="event-title" data-vi="Lễ Vu Quy" data-en="Bride Ceremony">Lễ Vu Quy</h3>
+                    <h3 class="event-title" data-vi="Lễ Vu Quy" data-en="Bride Ceremony" data-cn="迎亲仪式">Lễ Vu Quy</h3>
                     <div class="event-details">
                         <div class="event-detail">
                             <i class="fas fa-calendar-day"></i>
-                            <span data-vi="Chủ Nhật, 22 tháng 02 năm 2026" data-en="Sunday, February 22, 2026">Chủ Nhật, 22 tháng 02 năm 2026</span>
+                            <span data-vi="Chủ Nhật, 22 tháng 02 năm 2026" data-en="Sunday, February 22, 2026" data-cn="2026年2月22日 星期日">Chủ Nhật, 22 tháng 02 năm 2026</span>
                         </div>
                         <div class="event-detail">
                             <i class="fas fa-clock"></i>
-                            <span data-vi="10:30 Sáng" data-en="10:30 AM">10:30 Sáng</span>
+                            <span data-vi="10:30 Sáng" data-en="10:30 AM" data-cn="上午10:30">10:30 Sáng</span>
                         </div>
                         <div class="event-detail">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span data-vi="Sân văn hoá thôn 1" data-en="Thon 1 Cultural House">Sân văn hoá thôn 1</span>
+                            <span data-vi="Sân văn hoá thôn 1" data-en="Village 1 Cultural House" data-cn="第一村文化广场">Sân văn hoá thôn 1</span>
                         </div>
                         <div class="event-detail">
                             <i class="fas fa-home"></i>
-                            <span data-vi="Xã Lộc Hà, Tỉnh Hà Tĩnh" data-en="Loc Ha, Ha Tinh">Xã Lộc Hà, Tỉnh Hà Tĩnh</span>
+                            <span data-vi="Xã Lộc Hà, Tỉnh Hà Tĩnh" data-en="Loc Ha Commune, Ha Tinh Province" data-cn="河静省禄河乡">Xã Lộc Hà, Tỉnh Hà Tĩnh</span>
                         </div>
                     </div>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.144285321646!2d105.86508937524692!3d18.477122482608046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31384a2500000001%3A0x6df831be6654f76e!2zVHLGsOG7nW5nIFRIQ1MgQsOsbmggQW4gVGjhu4tuaA!5e0!3m2!1svi!2s!4v1769694572229!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                    <div class="event-actions">
                         <a href="https://www.google.com/maps/dir/21.0418663,105.7644367/Th%C3%B4n+1,+X%C3%A3+L%E1%BB%99c+H%C3%A0,+T%E1%BB%89nh+H%C3%A0+T%C4%A9nh/@19.7540673,104.4703994,8z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x31384a2500000001:0x6df831be6654f76e!2m2!1d105.8650894!2d18.4771225?entry=ttu&g_ep=EgoyMDI2MDEyNi4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D" target="_blank" class="btn btn-outline">
                             <i class="fas fa-map"></i>
-                            <span data-vi="Xem Bản Đồ" data-en="View Map">Xem Bản Đồ</span>
+                            <span data-vi="Xem Bản Đồ" data-en="View Map" data-cn="查看地图">Xem Bản Đồ</span>
                         </a>
                     </div>
                 </div>
@@ -168,23 +168,23 @@
                     <div class="event-icon">
                         <i class="fas fa-heart"></i>
                     </div>
-                    <h3 class="event-title" data-vi="Lễ Cưới" data-en="Wedding Ceremony">Lễ Cưới</h3>
+                    <h3 class="event-title" data-vi="Lễ Cưới" data-en="Wedding Ceremony" data-cn="婚礼仪式">Lễ Cưới</h3>
                     <div class="event-details">
                         <div class="event-detail">
                             <i class="fas fa-calendar-day"></i>
-                            <span data-vi="Thứ Năm, 26 tháng 02 năm 2026" data-en="Thursday, February 26, 2026">Thứ Năm, 26 tháng 02 năm 2026</span>
+                            <span data-vi="Thứ Năm, 26 tháng 02 năm 2026" data-en="Thursday, February 26, 2026" data-cn="2026年2月26日 星期四">Thứ Năm, 26 tháng 02 năm 2026</span>
                         </div>
                         <div class="event-detail">
                             <i class="fas fa-clock"></i>
-                            <span data-vi="11:00 Trưa" data-en="11:00 AM">11:00 Trưa</span>
+                            <span data-vi="11:00 Trưa" data-en="11:00 AM" data-cn="上午11:00">11:00 Trưa</span>
                         </div>
                         <div class="event-detail">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span data-vi="Tư gia nhà trai" data-en="Cong vien xa Binh An">Tư gia nhà trai</span>
+                            <span data-vi="Tư gia nhà trai" data-en="Groom's Family Home" data-cn="新郎家">Tư gia nhà trai</span>
                         </div>
                         <div class="event-detail">
                             <i class="fas fa-home"></i>
-                            <span data-vi="Xã Lộc Hà, Tỉnh Hà Tĩnh" data-en="Xã Lộc Hà, Tỉnh Hà Tĩnh">Xã Lộc Hà, Tỉnh Hà Tĩnh</span>
+                            <span data-vi="Xã Lộc Hà, Tỉnh Hà Tĩnh" data-en="Loc Ha Commune, Ha Tinh Province" data-cn="河静省禄河乡">Xã Lộc Hà, Tỉnh Hà Tĩnh</span>
                         </div>
                     </div>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.978042200996!2d105.8652482752471!3d18.484653782601978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31384b9762bb7a0f%3A0x40c7789d1e63210e!2zQmlhIGjGoWkgVMOibSBUw6xuaA!5e0!3m2!1svi!2s!4v1769630033969!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -192,7 +192,7 @@
                     <div class="event-actions">
                         <a href="https://www.google.com/maps/dir/21.0418663,105.7644367/Bia+h%C6%A1i+T%C3%A2m+T%C3%ACnh,+FVM9%2BV48,+Th%E1%BA%A1ch+B%E1%BA%B1ng,+L%E1%BB%99c+H%C3%A0,+H%C3%A0+T%C4%A9nh,+Vi%E1%BB%87t+Nam/@19.7540673,104.4703994,8z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x31384b9762bb7a0f:0x40c7789d1e63210e!2m2!1d105.8678232!2d18.4846538?entry=ttu&g_ep=EgoyMDI2MDEyNi4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D" target="_blank" class="btn btn-outline">
                             <i class="fas fa-map"></i>
-                            <span data-vi="Xem Bản Đồ" data-en="View Map">Xem Bản Đồ</span>
+                            <span data-vi="Xem Bản Đồ" data-en="View Map" data-cn="查看地图">Xem Bản Đồ</span>
                         </a>
                     </div>
                 </div>
@@ -203,7 +203,7 @@
     <!-- Gallery Section -->
     <section id="gallery" class="gallery-section lost-all-corner">
         <div class="container">
-            <h2 class="section-title" data-vi="Bộ Ảnh Cưới" data-en="Wedding Gallery">Bộ Ảnh Cưới</h2>
+            <h2 class="section-title" data-vi="Bộ Ảnh Cưới" data-en="Wedding Gallery" data-cn="婚礼相册">Bộ Ảnh Cưới</h2>
             <div class="gallery-viewer" aria-label="Wedding photo gallery">
                 <div class="gallery-main">
                     <button class="gallery-main-nav gallery-main-prev" id="galleryMainPrev" aria-label="Previous photo" type="button">
@@ -370,14 +370,15 @@
     <!-- Gift Section -->
     <section id="gift" class="gift-section lost-all-corner">
         <div class="container">
-            <h2 class="section-title" data-vi="Hộp Mừng Cưới" data-en="Wedding Gift">Hộp Mừng Cưới</h2>
+            <h2 class="section-title" data-vi="Hộp Mừng Cưới" data-en="Wedding Gift" data-cn="婚礼礼物">Hộp Mừng Cưới</h2>
             <p class="section-subtitle" data-vi="Sự hiện diện của bạn là món quà quý giá nhất với chúng tôi. Nếu bạn muốn gửi lời chúc bằng món quà, xin vui lòng sử dụng thông tin bên dưới:" 
-               data-en="Your presence is the greatest gift. If you wish to send a gift, please use the information below:">
+               data-en="Your presence is the greatest gift. If you wish to send a gift, please use the information below:"
+               data-cn="您的出席是我们最珍贵的礼物。如果您想送礼物，请使用以下信息：">
                 Sự hiện diện của bạn là món quà quý giá nhất với chúng tôi. Nếu bạn muốn gửi lời chúc bằng món quà, xin vui lòng sử dụng thông tin bên dưới:
             </p>
             <div class="gift-content">
                 <div class="gift-card">
-                    <h3 data-vi="Chú Rể" data-en="Groom">Chú Rể</h3>
+                    <h3 data-vi="Chú Rể" data-en="Groom" data-cn="新郎">Chú Rể</h3>
                     <p class="gift-name">Nguyễn Trọng Thuỷ</p>
                     <div class="qr-code-container">
                         <img src="assets/images/qr-groom.jpg" alt="QR Code - Groom" class="qr-code">
@@ -385,7 +386,7 @@
                 </div>
 
                 <div class="gift-card">
-                    <h3 data-vi="Cô Dâu" data-en="Bride">Cô Dâu</h3>
+                    <h3 data-vi="Cô Dâu" data-en="Bride" data-cn="新娘">Cô Dâu</h3>
                     <p class="gift-name">Lê Thị Diệu Thuỳ</p>
                     <div class="qr-code-container">
                         <img src="assets/images/qr-bride.jpg" alt="QR Code - Bride" class="qr-code">
@@ -407,9 +408,9 @@
                     <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
                 <p class="footer-copyright">
-                    <span data-vi="© 2026 Được làm với" data-en="© 2026 Made with">© 2026 Được làm với</span>
+                    <span data-vi="© 2026 Được làm với" data-en="© 2026 Made with" data-cn="© 2026 由">© 2026 Được làm với</span>
                     <i class="fas fa-heart"></i>
-                    <span data-vi="bởi Thuỷ & Thuỳ" data-en="by Thuy & Thuy">bởi Thuỷ & Thuỳ</span>
+                    <span data-vi="bởi Thuỷ & Thuỳ" data-en="by Thuy & Thuy" data-cn="水 & 水制作">bởi Thuỷ & Thuỳ</span>
                 </p>
             </div>
         </div>

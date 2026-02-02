@@ -11,7 +11,15 @@ const mainContent = document.getElementById('mainContent');
 // ==========================================
 // Language Configuration
 // ==========================================
-let currentLanguage = 'vi'; // Default language: Vietnamese
+// Get language from URL parameter, default to Vietnamese
+const urlParams = new URLSearchParams(window.location.search);
+const langParam = urlParams.get('lang');
+let currentLanguage = (langParam === 'en') ? 'en' : (langParam === 'cn') ? 'cn' : 'vi'; // Default language: Vietnamese
+
+// Set HTML lang attribute immediately
+if (document.documentElement) {
+    document.documentElement.lang = currentLanguage === 'cn' ? 'zh-CN' : currentLanguage;
+}
 
 const translations = {
     vi: {
@@ -55,67 +63,70 @@ const translations = {
         'weddingTitle': 'Wedding Ceremony - Thuy & Thuy',
         'engagementDesc': 'Bride ceremony of Nguyen Trong Thuy and Le Thi Dieu Thuy',
         'weddingDesc': 'Wedding ceremony of Nguyen Trong Thuy and Le Thi Dieu Thuy'
+    },
+    cn: {
+        // Navigation
+        'Trang Chủ': '首页',
+        'Câu Chuyện': '我们的故事',
+        'Sự Kiện': '活动',
+        'Bộ Ảnh': '相册',
+        'Xác Nhận': '确认出席',
+        'Món Quà': '礼物',
+        'Liên Hệ': '联系',
+        
+        // Form validation messages
+        'nameRequired': '请输入您的姓名',
+        'phoneRequired': '请输入您的电话号码',
+        'phoneInvalid': '电话号码无效',
+        
+        // Calendar event texts
+        'engagementTitle': '迎亲仪式 - 水 & 水',
+        'weddingTitle': '婚礼仪式 - 水 & 水',
+        'engagementDesc': '阮重水和黎氏妙水的迎亲仪式',
+        'weddingDesc': '阮重水和黎氏妙水的婚礼仪式'
     }
 };
 
 // ==========================================
-// Language Toggle Functionality
+// Language Update Functionality
 // ==========================================
-const languageToggle = document.getElementById('languageToggle');
-
-const toggleLanguage = () => {
-    currentLanguage = currentLanguage === 'vi' ? 'en' : 'vi';
-    updateLanguage();
-};
-
 const updateLanguage = () => {
-    // Update all elements with data-vi and data-en attributes
-    const elements = document.querySelectorAll('[data-vi][data-en]');
+    // Update all elements with data-vi, data-en, and data-cn attributes
+    const elements = document.querySelectorAll('[data-vi]');
     
     elements.forEach(element => {
         const viText = element.getAttribute('data-vi');
         const enText = element.getAttribute('data-en');
+        const cnText = element.getAttribute('data-cn');
         
         if (currentLanguage === 'vi') {
             element.textContent = viText;
-        } else {
-            element.textContent = enText;
+        } else if (currentLanguage === 'en') {
+            element.textContent = enText || viText;
+        } else if (currentLanguage === 'cn') {
+            element.textContent = cnText || enText || viText;
         }
     });
     
     // Update placeholders
-    const inputsWithPlaceholder = document.querySelectorAll('[data-placeholder-vi][data-placeholder-en]');
+    const inputsWithPlaceholder = document.querySelectorAll('[data-placeholder-vi]');
     inputsWithPlaceholder.forEach(input => {
         const viPlaceholder = input.getAttribute('data-placeholder-vi');
         const enPlaceholder = input.getAttribute('data-placeholder-en');
+        const cnPlaceholder = input.getAttribute('data-placeholder-cn');
         
-        input.placeholder = currentLanguage === 'vi' ? viPlaceholder : enPlaceholder;
+        if (currentLanguage === 'vi') {
+            input.placeholder = viPlaceholder;
+        } else if (currentLanguage === 'en') {
+            input.placeholder = enPlaceholder || viPlaceholder;
+        } else if (currentLanguage === 'cn') {
+            input.placeholder = cnPlaceholder || enPlaceholder || viPlaceholder;
+        }
     });
     
-    // Update language toggle button (if it exists)
-    if (languageToggle) {
-        const flagSpan = languageToggle.querySelector('.flag');
-        const langText = languageToggle.querySelector('.lang-text');
-        
-        if (flagSpan && langText) {
-            if (currentLanguage === 'vi') {
-                flagSpan.textContent = '🇻🇳';
-                langText.textContent = 'EN';
-            } else {
-                flagSpan.textContent = '🇬🇧';
-                langText.textContent = 'VI';
-            }
-        }
-    }
-    
     // Update HTML lang attribute
-    document.documentElement.lang = currentLanguage;
+    document.documentElement.lang = currentLanguage === 'cn' ? 'zh-CN' : currentLanguage;
 };
-
-// Event listener for language toggle (if it exists)
-if (languageToggle) {
-    languageToggle.addEventListener('click', toggleLanguage);
-}
 
 // ==========================================
 // Countdown Timer
@@ -749,7 +760,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mainContent.style.display = 'block';
     }
     
-    // Set initial language
+    // Set initial language based on URL parameter
     updateLanguage();
     
     // Add smooth reveal animation to sections
