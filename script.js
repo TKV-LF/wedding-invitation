@@ -130,8 +130,12 @@ const updateLanguage = () => {
 
 // ==========================================
 // Countdown Timer
+// Target: 11:00 AM on 26/02/2026 (GMT+7)
+// Equivalent absolute time in UTC: 04:00:00Z on 26/02/2026
+// Using the UTC representation ensures the countdown is correct
+// regardless of the viewer's local time zone.
 // ==========================================
-const weddingDate = new Date('2026-02-26T11:00:00').getTime();
+const weddingDate = new Date('2026-02-26T04:00:00Z').getTime();
 
 const updateCountdown = () => {
     const now = new Date().getTime();
